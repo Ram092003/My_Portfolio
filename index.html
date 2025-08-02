@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ram Gopal - Data Science Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS & Animation Libraries -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- JS Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation (Bootstrap Sticky Navbar) -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark bg-transparent px-4">
+    <a class="navbar-brand text-uppercase" href="#home">RAMGOPAL M</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h2 data-aos="fade-down">Hi, I'm <span>RamGopal </span></h2>
+    <p data-aos="fade-up">Data Scientist | Machine Learning | Deep Learning | Python</p>
+    <a href="#projects" class="btn" data-aos="zoom-in">View My Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" data-aos="fade-right">
+    <div class="about-container">
+      <div class="profile-wrapper">
+        <img src="img/profile.png" alt="Profile" class="profile-img">
+      </div>
+      <div class="about-text">
+        <h3>I’m RamGopal</h3>
+        <h4 class="about-subtitle"><span id="typed"></span></h4>
+        <p class="moto">
+          Turning data into insights and AI into real-world solutions.
+        </p>
+        <p>
+          I am a passionate Data Science & Machine Learning enthusiast with expertise in Python, Deep Learning,
+          and AI-powered solutions. I enjoy solving real-world problems using data-driven approaches 
+          and developing intelligent applications.
+        </p>
+
+        <!-- Resume Download Box -->
+        <div class="resume-box" data-aos="zoom-in">
+          <p>Click below to download my resume</p>
+          <a href="files/Ramgopal Resume.pdf" download class="resume-btn">Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h3 data-aos="fade-up">My Projects</h3>
+    <div class="project-container">
+
+      <div class="project-card" data-aos="flip-left" onclick="openModal('project1')">
+        <h4>Currency Classification</h4>
+        <p>CNN-based Indian currency note detection.</p>
+        <span class="view-more">Click to view</span><br>
+        <a href="https://github.com/Ram092003/currency_classifier.git" target="_blank">GitHub</a>
+      </div>
+
+      <div class="project-card" data-aos="flip-left" data-aos-delay="200" onclick="openModal('project2')">
+        <h4>House Price Prediction</h4>
+        <p>Predicts house prices using regression models.</p>
+        <span class="view-more">Click to view</span><br>
+        <a href="https://github.com/Ram092003/House_Price-_Prediction.git" target="_blank">GitHub</a>
+      </div>
+
+      <div class="project-card" data-aos="flip-left" data-aos-delay="400" onclick="openModal('project3')">
+        <h4>Employee Retention Prediction</h4>
+        <p>Classification model for employee stay/leave.</p>
+        <span class="view-more">Click to view</span><br>
+        <a href="https://github.com/Ram092003/Employee-attrition-prediction.git" target="_blank">GitHub</a>
+      </div>
+
+      <div class="project-card" data-aos="flip-left" data-aos-delay="600" onclick="openModal('project4')">
+        <h4>Python RAG Chatbot</h4>
+        <p>Retrieval-Augmented Generation (RAG) AI chatbot.</p>
+        <span class="view-more">Click to view</span><br>
+        <a href="https://github.com/Ram092003/Python-RAG-Chatbot.git" target="_blank">GitHub</a>
+      </div>
+
+      <div class="project-card" data-aos="flip-left" data-aos-delay="800" onclick="openModal('project5')">
+        <h4>LSTM Sentiment Analysis</h4>
+        <p>LSTM model for movie review sentiment analysis.</p>
+        <span class="view-more">Click to view</span><br>
+        <a href="https://github.com/Ram092003/LSTM-Sentiment-Analysis.git" target="_blank">GitHub</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Project Modals -->
+  <div id="project1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project1')">&times;</span>
+      <h2>Currency Classification</h2>
+      <p>This project uses a Convolutional Neural Network (CNN) to classify Indian currency notes into their respective denominations. It is deployed using Flask as a web application.</p>
+      <p><strong>Technologies Used:</strong> Python, TensorFlow, CNN, Flask, HTML, CSS</p>
+    </div>
+  </div>
+
+  <div id="project2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project2')">&times;</span>
+      <h2>House Price Prediction</h2>
+      <p>This project predicts the price of a house based on various features like location, size, and number of rooms using regression models.</p>
+      <p><strong>Technologies Used:</strong> Python, Scikit-Learn, Pandas, Matplotlib</p>
+    </div>
+  </div>
+
+  <div id="project3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project3')">&times;</span>
+      <h2>Employee Retention Prediction</h2>
+      <p>Machine learning classification project that predicts if an employee will leave or stay in the company using HR data.</p>
+      <p><strong>Technologies Used:</strong> Python, Scikit-Learn, Logistic Regression, Pandas</p>
+    </div>
+  </div>
+
+  <div id="project4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project4')">&times;</span>
+      <h2>Python RAG Chatbot</h2>
+      <p>A Retrieval-Augmented Generation chatbot built with Python that answers user queries using local knowledge base and OpenAI model.</p>
+      <p><strong>Technologies Used:</strong> Python, LangChain, OpenAI API, HTML, Flask</p>
+    </div>
+  </div>
+
+  <div id="project5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project5')">&times;</span>
+      <h2>LSTM Sentiment Analysis</h2>
+      <p>Deep Learning project using LSTM to analyze sentiment in movie reviews, classifying them as positive or negative.</p>
+      <p><strong>Technologies Used:</strong> Python, TensorFlow/Keras, LSTM, NLP</p>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h3 data-aos="fade-up">Skills</h3>
+    <div class="skills-container">
+      <div class="skill" data-aos="fade-up" data-aos-delay="400">Flask</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="500">MySQL</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="600">Machine Learning</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="700">Deep Learning (ANN,CNN,RNN(LSTM))</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="800">Data Analysis (NumPy, Pandas)</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="900">Data Visualization (Matplotlib, Seaborn)</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1000">Sentiment Analysis (NLP)</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1100">RAG-based AI Chatbot</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1200">VS Code</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1300">Jupyter Notebook</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1400">Git & GitHub</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1500">TensorFlow & Keras</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1600">GitHub Pages</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1700">Problem Solving</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1800">Team Leadership</div>
+      <div class="skill" data-aos="fade-up" data-aos-delay="1900">Smart Work & Dedication</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" data-aos="zoom-in">
+    <h3>Contact Me</h3>
+    <p>Email: ramgopal.mohan09@gmail.com</p>
+    <div class="social-icons">
+      <a href="https://github.com/Ram092003"><img src="img/github.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/ramgopal-m-a37abb372/"><img src="img/linkedin.png" alt="LinkedIn"></a>
+    </div>
+  </section>
+
+  <!-- Bootstrap & JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    AOS.init();
+    var typed = new Typed("#typed", {
+      strings: ["Data Scientist", "Python Developer", "ML & DL Enthusiast", "AI Explorer"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1500,
+      loop: true
+    });
+
+    // Change navbar color on scroll
+    window.addEventListener("scroll", function() {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>
